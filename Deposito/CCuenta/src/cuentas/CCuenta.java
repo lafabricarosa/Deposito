@@ -1,14 +1,28 @@
 package cuentas;
 
+/**
+ * @author rosa
+ *
+ */
+
 public class CCuenta {
 
 	public static void main(String[] args) {
         
         //Depuracion. Se detiene siempre
+		/**
+		 * Instancia de la clase CCuenta
+		 */
         CCuenta cuenta1 = new CCuenta();
+        
         operativa_cuenta(cuenta1, 0);
     }
 
+	/**
+	 * Método que nos permite calcular la cantidad de saldo en cuenta
+	 * @param cuenta1
+	 * @param cantidad
+	 */
 	private static void operativa_cuenta(CCuenta cuenta1, float cantidad) {
 		System.out.println("Saldo inicial: " + cuenta1.getdSaldo() + " euros");
         //Depuracion. Provoca parada por ingreso con cantidad menor de 0
@@ -26,6 +40,11 @@ public class CCuenta {
 	}
     private double dSaldo;
     
+    /**
+     * Método para comprobar que el ingreso es correcto
+     * @param cantidad
+     * @return un código de error si los valores de ingreso son erróneos
+     */
     public int ingresar (double cantidad){
             int iCodErr;
             if (cantidad <0){
@@ -45,6 +64,10 @@ public class CCuenta {
             return iCodErr;
     }
             
+    		/**
+    		 * Método para comprobar que la retirada de saldo es correcta
+    		 * @param cantidad
+    		 */
             public void retirar (double cantidad){
                 if (cantidad <=0){
                     System.out.println("No se puede retirar una cantidad negativa");
@@ -56,11 +79,19 @@ public class CCuenta {
                     
                 }
             }
-
+            
+            /**
+             * Método getter para obtener el saldo de la cuenta
+             * @return un double con el importe del saldo
+             */
 			private double getdSaldo() {
 				return dSaldo;
 			}
-
+			
+			/**
+			 * Método setter para establecer el saldo en cuenta
+			 * @param dSaldo
+			 */
 			private void setdSaldo(double dSaldo) {
 				this.dSaldo = dSaldo;
 			}
