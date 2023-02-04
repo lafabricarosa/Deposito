@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author rosa
- *
- */
-module CCuenta {
-}
